@@ -1,0 +1,17 @@
+tasks:
+  - init: npm install
+    command: npm run start
+
+ports:
+  - port: 3000
+    onOpen: open-browser
+
+vscode:
+  extensions:
+    - dsznajder.es7-react-js-snippets
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true 
