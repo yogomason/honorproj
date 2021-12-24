@@ -13,7 +13,7 @@ export const ToolboxWrapper = styled.div`
     margin-left: ${({open}: props) => (open ? '0' : '-300px')};
     width:340px;
     height: 100vh;
-    background:grey;
+    background:#808080;
     flex-direction: row;
     transition: 0.2s ease-in-out;
 `
@@ -27,7 +27,7 @@ export const ToolboxArrowContainer = styled.div`
     width: 40px;
 
     height:100vh;
-    background-color: red;
+    background-color: #bbbbbb;
     text-align: center;
     display: flex;
     align-items: center;
@@ -37,12 +37,12 @@ export const ToolboxArrowContainer = styled.div`
 
 export const ArrowRight = styled(AiOutlineArrowRight)`
     font-size: 1.2em;
-    display: ${({open}: props) => (open ? "block" : "none")};
+    display: ${({open}: props) => (open ? "none" : "block")};
 `
 
 export const ArrowLeft = styled(AiOutlineArrowLeft)`
     font-size: 1.2em;
-    display: ${({open}: props) => (open ? "none" : "block")};
+    display: ${({open}: props) => (open ? "block" : "none")};
 `
 
 export const ToolboxHeader = styled.div`

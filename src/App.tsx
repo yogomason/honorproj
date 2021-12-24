@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Frame from "./lib/Frame/Frame";
 import Toolbox from "./lib/toolbox/Toolbox";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div>
+      <Frame />
       <Toolbox open={Open} openFunction={openToolbox}/>
     </div>
   );
