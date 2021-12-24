@@ -7,7 +7,7 @@ type ToolboxProps = {
 
 const Toolbox = ({ open, openFunction }: ToolboxProps) => {
     return (
-        <div>
+        <>
             <ToolboxWrapper open={open}>
                 <ToolboxMain>
                     <ToolboxHeader>
@@ -30,7 +30,7 @@ const Toolbox = ({ open, openFunction }: ToolboxProps) => {
                     <ArrowLeft open={open}/>
                 </ToolboxArrowContainer>
             </ToolboxWrapper>
-        </div>
+        </>
     )
 }
 
