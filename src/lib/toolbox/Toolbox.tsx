@@ -24,10 +24,10 @@ const Toolbox = ({ open, openFunction }: ToolboxProps) => {
                     </ToolboxContainer>
                 </ToolboxMain>
                 <ToolboxArrowContainer onClick={openFunction}>
-                    <ArrowRight />
-                    <ArrowRight />
-                    <ArrowLeft />
-                    <ArrowLeft />
+                    <ArrowRight open={open}/>
+                    <ArrowRight open={open}/>
+                    <ArrowLeft open={open}/>
+                    <ArrowLeft open={open}/>
                 </ToolboxArrowContainer>
             </ToolboxWrapper>
         </div>

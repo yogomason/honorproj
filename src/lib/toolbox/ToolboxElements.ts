@@ -37,13 +37,12 @@ export const ToolboxArrowContainer = styled.div`
 
 export const ArrowRight = styled(AiOutlineArrowRight)`
     font-size: 1.2em;
-    display: ${({open}: props) => (open ? "none" : "block")};
+    display: ${({open}: props) => (open ? "block" : "none")};
 `
 
 export const ArrowLeft = styled(AiOutlineArrowLeft)`
     font-size: 1.2em;
-
-    display: ${({open}: props) => (open ? "block" : "none")};
+    display: ${({open}: props) => (open ? "none" : "block")};
 `
 
 export const ToolboxHeader = styled.div`
