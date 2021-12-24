@@ -1,12 +1,49 @@
 import styled from "styled-components";
+import { AiOutlineArrowRight, AiOutlineArrowLeft  } from "react-icons/ai"
+
+type props = {
+    open?: boolean
+}
 
 export const ToolboxWrapper = styled.div`
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
-    width:300px;
+    margin-left: ${({open}: props) => (open ? '0' : '-300px')};
+    width:340px;
     height: 100vh;
     background:grey;
+    flex-direction: row;
+    transition: 0.2s ease-in-out;
+`
+
+export const ToolboxMain = styled.div`
+    width:300px;
+    height: 100vh;
+`
+
+export const ToolboxArrowContainer = styled.div`
+    width: 40px;
+
+    height:100vh;
+    background-color: red;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+`
+
+export const ArrowRight = styled(AiOutlineArrowRight)`
+    font-size: 1.2em;
+    display: ${({open}: props) => (open ? "none" : "block")};
+`
+
+export const ArrowLeft = styled(AiOutlineArrowLeft)`
+    font-size: 1.2em;
+
+    display: ${({open}: props) => (open ? "block" : "none")};
 `
 
 export const ToolboxHeader = styled.div`
