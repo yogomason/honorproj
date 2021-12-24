@@ -1,20 +1,21 @@
-import { FrameWrapper, GridHorizontalLine } from "./FrameElements"
+import { FrameWrapper, GridHorizontalLine, GridVerticalLine } from "./FrameElements"
 
-const generateGrid = () => {
-    const spaceing: number = 40
-    return(
-    for (let i = 0; i < 40; i++) {
-        <GridHorizontalLine space={spaceing} />
-        console.log(`generated ${spaceing}`)
-    )
-    }
+var horizontals: number[] = []
+for (let i = 0; i < 1601; i+=160) {
+    horizontals.push(i)
+}
+
+var verticals: number[] = []
+for (let i = 0; i < 1000; i+=160) {
+    verticals.push(i)
 }
 
 const Frame = () => {
     return (
         <>
             <FrameWrapper>
-                <generateGrid />
+                {horizontals.map(() => <GridHorizontalLine space={160} />)}
+                {verticals.map((spacing) => <GridVerticalLine space={spacing} />)}
             </FrameWrapper>
         </>
     )

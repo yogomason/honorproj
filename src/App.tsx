@@ -11,8 +11,8 @@ function App() {
 
   return (
     <div>
-      <Toolbox open={Open} openFunction={openToolbox}/>
       <Frame />
+      <Toolbox open={Open} openFunction={openToolbox}/>
     </div>
   );
 }
