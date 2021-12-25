@@ -1,11 +1,12 @@
 import { ToolboxContainer, ToolboxHeader, ToolboxTitle, ToolboxWrapper, ToolboxItem, ToolboxItemList, ToolboxComponent, ToolboxMain, ToolboxArrowContainer, ArrowRight, ArrowLeft } from "./ToolboxElements"
-
+import Button  from "../Button/Button"
 type ToolboxProps = {
     open: boolean
     openFunction: any
+    addFrameItems: any
 }
 
-const Toolbox = ({ open, openFunction }: ToolboxProps) => {
+const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
     return (
         <>
             <ToolboxWrapper open={open}>
@@ -17,7 +18,7 @@ const Toolbox = ({ open, openFunction }: ToolboxProps) => {
                     </ToolboxHeader>
                     <ToolboxContainer>
                         <ToolboxItemList>
-                        <ToolboxItem><ToolboxComponent /></ToolboxItem>
+                        <ToolboxItem><ToolboxComponent onClick={() => addFrameItems(<Button />)}>Button</ToolboxComponent></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         </ToolboxItemList>

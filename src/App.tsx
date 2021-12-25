@@ -1,18 +1,25 @@
 import { useState } from "react";
+import Button from "./lib/Button/Button";
 import Frame from "./lib/Frame/Frame";
 import Toolbox from "./lib/toolbox/Toolbox";
 
 function App() {
   const [Open, setOpen] = useState(true)
+  const [FrameItems, setFrameItems] = useState([<Button />])
 
   const openToolbox = () => {
     setOpen(!Open)
   }
 
+  const addFrameItem = (item: JSX.Element) => {
+    setFrameItems([...FrameItems, item])
+  }
+
   return (
     <div>
-      <Frame />
-      <Toolbox open={Open} openFunction={openToolbox}/>
+      <Frame children={FrameItems} />
+      <Toolbox open={Open} openFunction={openToolbox} addFrameItems={addFrameItem} />
+      
     </div>
   );
 }
