@@ -21,7 +21,7 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                     </ToolboxHeader>
                     <ToolboxContainer>
                         <ToolboxItemList>
-                        <ToolboxItem><ToolboxComponent onClick={() => addFrameItems(<Draggable nodeRef={nodeRef}><div ref={nodeRef}><Button /></div></Draggable>)}>Button</ToolboxComponent></ToolboxItem>
+                        <ToolboxItem><ToolboxComponent onClick={() => addFrameItems(<Draggable grid={[10,10]} nodeRef={nodeRef}><div ref={nodeRef}><Button /></div></Draggable>)}>Button</ToolboxComponent></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         </ToolboxItemList>
