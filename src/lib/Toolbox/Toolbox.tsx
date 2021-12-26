@@ -1,53 +1,84 @@
-import { ToolboxContainer, ToolboxHeader, ToolboxTitle, ToolboxWrapper, ToolboxItem, ToolboxItemList, ToolboxComponent, ToolboxMain, ToolboxArrowContainer, ArrowRight, ArrowLeft, ComponentProps, PropsList, PropertiesContainer } from "./ToolboxElements"
-import Button  from "../Button/Button"
-import Draggable from "react-draggable"
-import React from "react"
+import {
+  ToolboxContainer,
+  ToolboxHeader,
+  ToolboxTitle,
+  ToolboxWrapper,
+  ToolboxItem,
+  ToolboxItemList,
+  ToolboxComponent,
+  ToolboxMain,
+  ToolboxArrowContainer,
+  ArrowRight,
+  ArrowLeft,
+  ComponentProps,
+  PropsList,
+  PropertiesContainer,
+} from "./ToolboxElements";
+import Button from "../Button/Button";
+import Draggable from "react-draggable";
+import React from "react";
 type ToolboxProps = {
-    open: boolean
-    openFunction: any
-    addFrameItems: any
-}
+  open: boolean;
+  openFunction: any;
+  addFrameItems: any;
+};
 
 const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
-    const nodeRef = React.useRef(null);
-    return (
-        <>
-            <ToolboxWrapper open={open}>
-                <ToolboxMain>
-                    <ToolboxHeader>
-                        <ToolboxTitle>
-                        Toolbox
-                        </ToolboxTitle>
-                    </ToolboxHeader>
-                    <ToolboxContainer>
-                        <ToolboxItemList>
-                        <ToolboxItem><ToolboxComponent onClick={() => addFrameItems(<Draggable grid={[10,10]} nodeRef={nodeRef}><div ref={nodeRef}><Button /></div></Draggable>)}>Button</ToolboxComponent></ToolboxItem>
-                        <ToolboxItem><ToolboxComponent /></ToolboxItem>
-                        <ToolboxItem><ToolboxComponent /></ToolboxItem>
-                        <ToolboxItem><ToolboxComponent /></ToolboxItem>
-                        <ToolboxItem><ToolboxComponent /></ToolboxItem>
-                        </ToolboxItemList>
-                    </ToolboxContainer>
-                    <PropertiesContainer>
-                        <ComponentProps>
-                            <PropsList>
-                                
-                            </PropsList>
-                            <PropsList>
+  const nodeRef = React.useRef(null);
+  return (
+    <>
+      <ToolboxWrapper open={open}>
+        <ToolboxMain>
+          <ToolboxHeader>
+            <ToolboxTitle>Toolbox</ToolboxTitle>
+          </ToolboxHeader>
+          <ToolboxContainer>
+            <ToolboxItemList>
+              <ToolboxItem>
+                <ToolboxComponent
+                  onClick={() =>
+                    addFrameItems(
+                      <Draggable grid={[10, 10]} nodeRef={nodeRef}>
+                        <div ref={nodeRef}>
+                          <Button />
+                        </div>
+                      </Draggable>
+                    )
+                  }
+                >
+                  Button
+                </ToolboxComponent>
+              </ToolboxItem>
+              <ToolboxItem>
+                <ToolboxComponent />
+              </ToolboxItem>
+              <ToolboxItem>
+                <ToolboxComponent />
+              </ToolboxItem>
+              <ToolboxItem>
+                <ToolboxComponent />
+              </ToolboxItem>
+              <ToolboxItem>
+                <ToolboxComponent />
+              </ToolboxItem>
+            </ToolboxItemList>
+          </ToolboxContainer>
+          <PropertiesContainer>
+            <ComponentProps>
+              <PropsList></PropsList>
+              <PropsList></PropsList>
+            </ComponentProps>
+          </PropertiesContainer>
+        </ToolboxMain>
+        <ToolboxArrowContainer onClick={openFunction}>
+          <ArrowRight open={open} />
+          <ArrowRight open={open} />
+          <ArrowLeft open={open} />
+          <ArrowLeft open={open} />
+        </ToolboxArrowContainer>
+      </ToolboxWrapper>
+    </>
+  );
+};
 
-                            </PropsList>
-                        </ComponentProps>
-                    </PropertiesContainer>
-                </ToolboxMain>
-                <ToolboxArrowContainer onClick={openFunction}>
-                    <ArrowRight open={open}/>
-                    <ArrowRight open={open}/>
-                    <ArrowLeft open={open}/>
-                    <ArrowLeft open={open}/>
-                </ToolboxArrowContainer>
-            </ToolboxWrapper>
-        </>
-    )
-}
-
-export default Toolbox
+export default Toolbox;

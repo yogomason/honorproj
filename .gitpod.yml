@@ -16,4 +16,4 @@ github:
   prebuilds:
     master: true
     branches: true
-    pullRequests: true 
+    pullRequests: true
