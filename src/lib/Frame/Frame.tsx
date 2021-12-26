@@ -1,4 +1,5 @@
 import React from "react";
+import Draggable from "react-draggable";
 import {
   FrameWrapper,
   GridHorizontalLine,
@@ -19,7 +20,9 @@ for (let i = 0; i < 2000; i += 20) {
   verticals.push(i);
 }
 
+
 const Frame = ({ children }: props) => {
+  const nodeRef = React.useRef(null);
   return (
     <>
       <FrameWrapper>
@@ -30,7 +33,7 @@ const Frame = ({ children }: props) => {
           <GridVerticalLine space={spacing} key={spacing} />
         ))}
         {children?.map((child) => (
-          <div>{child}</div>
+          <Draggable nodeRef={nodeRef}><div ref={nodeRef}>{child}</div></Draggable>
         ))}
       </FrameWrapper>
     </>

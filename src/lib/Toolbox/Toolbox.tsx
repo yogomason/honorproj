@@ -26,7 +26,6 @@ type ToolboxProps = {
 };
 
 const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
-  const nodeRef = React.useRef(null);
   return (
     <>
       <ToolboxWrapper open={open}>
@@ -40,11 +39,7 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                 <ToolboxComponent
                   onClick={() =>
                     addFrameItems(
-                      <Draggable grid={[10, 10]} nodeRef={nodeRef}>
-                        <div ref={nodeRef}>
-                          <Button  />
-                        </div>
-                      </Draggable>
+                          <Button  text="Button" />
                     )
                   }
                 >

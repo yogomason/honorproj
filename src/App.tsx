@@ -12,6 +12,7 @@ function App() {
 
   const addFrameItem = (item: JSX.Element) => {
     setFrameItems([...FrameItems, item]);
+    console.log(FrameItems)
   };
 
 

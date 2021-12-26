@@ -2,20 +2,19 @@ import { useState } from "react";
 import { ButtonText, ButtonWrapper } from "./ButtonElements";
 
 type props = {
+  text: string
 }
 
-const Button = ({}: props) => {
+const Button = ({text}: props) => {
 
-const [buttonText, setButtonText] = useState("Button")
-
-const alterText = (val: any) => {
-  setButtonText(val)
+const returnSelf = () => {
+  console.log(Button)
 }
 
   return (
     <>
-      <ButtonWrapper>
-        <ButtonText>{buttonText}</ButtonText>
+      <ButtonWrapper onClick={returnSelf}>
+        <ButtonText>{text}</ButtonText>
       </ButtonWrapper>
     </>
   );
