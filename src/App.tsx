@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Frame from "./lib/Frame/Frame";
-import Toolbox from "./lib/toolbox/Toolbox";
+import Toolbox from "./lib/Toolbox/Toolbox";
 
 function App() {
   const [Open, setOpen] = useState(true)
