@@ -90,14 +90,15 @@ export const ComponentProps = styled.div`
 `;
 
 export const PropsList = styled.div`
-  width: 50%;
+padding:1em;
+  width: 100%;
   height: 100%;
-  background-color: red;
   display: flex;
   flex-direction: column;
 `;
 
 export const PropertiesContainer = styled.div`
+
   display: flex;
   flex-direction: row;
   overflow-y: scroll;
@@ -108,8 +109,10 @@ export const PropertiesContainer = styled.div`
 export const Property = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 `;
 
-export const PropertyTextInput = styled.input``;
+export const PropertyTextInput = styled.input`
+`;
 
 export const PropertyName = styled.p``;

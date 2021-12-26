@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { ButtonText, ButtonWrapper } from "./ButtonElements";
 
-const Button = () => {
+type props = {
+  text: string
+}
+
+const Button = ({text}: props) => {
+  
+
+
   return (
     <>
       <ButtonWrapper>
-        <ButtonText>Click Me!</ButtonText>
+        <ButtonText>{text}</ButtonText>
       </ButtonWrapper>
     </>
   );
