@@ -15,7 +15,7 @@ const alterText = (val: any) => {
 
   return (
     <>
-      <ButtonWrapper onMouseDown={() => getProperties(alterText)}>
+      <ButtonWrapper onMouseDown={() => getProperties(buttonText, alterText)}>
         <ButtonText>{buttonText}</ButtonText>
       </ButtonWrapper>
     </>

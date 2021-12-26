@@ -14,9 +14,6 @@ function App() {
     setFrameItems([...FrameItems, item]);
   };
 
-  const currProp = (setText: any) => {
-    setText("hello")
-  }
 
   return (
     <div>
@@ -25,7 +22,6 @@ function App() {
         open={Open}
         openFunction={openToolbox}
         addFrameItems={addFrameItem}
-        currProp={currProp}
       />
     </div>
   );
