@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Draggable from "react-draggable";
-import Button from "./lib/Button/Button";
 import Frame from "./lib/Frame/Frame";
 import Toolbox from "./lib/toolbox/Toolbox";
 
