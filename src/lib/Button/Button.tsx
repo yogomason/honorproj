@@ -1,6 +1,6 @@
 import { ButtonText, ButtonWrapper } from "./ButtonElements"
 
-const Button = () => {
+const Button = ( ) => {
     return (
         <>
             <ButtonWrapper>
