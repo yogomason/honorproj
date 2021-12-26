@@ -14,11 +14,12 @@ flex-direction: row;
 `
 
 export const GridHorizontalLine = styled.div`
+position: fixed;
     width: 2px;
     height: 100%;
     opacity: 50%;
     background-color: grey;
-    margin-left: ${({space}: props) => (`${space}px`)};
+    left: ${({space}: props) => (`${space}px`)};
 ` 
 export const GridVerticalLine = styled.div`
 position: fixed;
