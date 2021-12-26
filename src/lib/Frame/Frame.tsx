@@ -6,12 +6,12 @@ type props = {
 }
 
 var horizontals: number[] = []
-for (let i = 0; i < 1601; i+=80) {
+for (let i = 0; i < 1800; i+=20) {
     horizontals.push(i)
 }
 
 var verticals: number[] = []
-for (let i = 0; i < 1000; i+=80) {
+for (let i = 0; i < 2000; i+=20) {
     verticals.push(i)
 }
 

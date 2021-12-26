@@ -9,11 +9,12 @@ display: flex;
 flex-direction: row;
     width: 100vw;
     height: 100vh;
-    margin-left: 40px;
     background-color: lightgrey;
+    overflow: hidden;
+    
 `
 
-export const GridHorizontalLine = styled.div`
+export const GridVerticalLine = styled.div`
 position: fixed;
     width: 2px;
     height: 100%;
@@ -21,7 +22,7 @@ position: fixed;
     background-color: grey;
     left: ${({space}: props) => (`${space}px`)};
 ` 
-export const GridVerticalLine = styled.div`
+export const GridHorizontalLine = styled.div`
 position: fixed;
     height: 2px;
     width: 100%;
