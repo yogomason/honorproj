@@ -1,4 +1,4 @@
-import { ToolboxContainer, ToolboxHeader, ToolboxTitle, ToolboxWrapper, ToolboxItem, ToolboxItemList, ToolboxComponent, ToolboxMain, ToolboxArrowContainer, ArrowRight, ArrowLeft } from "./ToolboxElements"
+import { ToolboxContainer, ToolboxHeader, ToolboxTitle, ToolboxWrapper, ToolboxItem, ToolboxItemList, ToolboxComponent, ToolboxMain, ToolboxArrowContainer, ArrowRight, ArrowLeft, ComponentProps, PropsList, PropertiesContainer } from "./ToolboxElements"
 import Button  from "../Button/Button"
 import Draggable from "react-draggable"
 import React from "react"
@@ -24,8 +24,20 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                         <ToolboxItem><ToolboxComponent onClick={() => addFrameItems(<Draggable grid={[10,10]} nodeRef={nodeRef}><div ref={nodeRef}><Button /></div></Draggable>)}>Button</ToolboxComponent></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
+                        <ToolboxItem><ToolboxComponent /></ToolboxItem>
+                        <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         </ToolboxItemList>
                     </ToolboxContainer>
+                    <PropertiesContainer>
+                        <ComponentProps>
+                            <PropsList>
+                                
+                            </PropsList>
+                            <PropsList>
+
+                            </PropsList>
+                        </ComponentProps>
+                    </PropertiesContainer>
                 </ToolboxMain>
                 <ToolboxArrowContainer onClick={openFunction}>
                     <ArrowRight open={open}/>

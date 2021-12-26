@@ -21,11 +21,11 @@ export const ToolboxWrapper = styled.div`
 export const ToolboxMain = styled.div`
     width:300px;
     height: 100vh;
+    padding-bottom: 40px;
 `
 
 export const ToolboxArrowContainer = styled.div`
     width: 40px;
-
     height:100vh;
     background-color: #bbbbbb;
     text-align: center;
@@ -59,6 +59,9 @@ export const ToolboxTitle = styled.h1`
 export const ToolboxContainer = styled.div`
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    max-height: 100%;
+    height: 500px;
 `
 
 export const ToolboxItemList = styled.ul`
@@ -78,4 +81,25 @@ export const ToolboxComponent = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+`
+
+export const ComponentProps = styled.div`
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    max-height: 350px;
+`
+
+export const PropsList = styled.div`
+    width:50%;
+    height:100%;
+    background-color: red;
+`
+
+export const PropertiesContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+    max-height: 100%;
+    height: 350px;
 `
