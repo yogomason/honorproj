@@ -112,7 +112,5 @@ export const Property = styled.div`
   justify-content: space-evenly;
 `;
 
-export const PropertyTextInput = styled.input`
-`;
 
 export const PropertyName = styled.p``;

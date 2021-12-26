@@ -15,7 +15,6 @@ import {
   PropertiesContainer,
   Property,
   PropertyName,
-  PropertyTextInput,
 } from "./ToolboxElements";
 import Button from "../Button/Button";
 import Draggable from "react-draggable";
@@ -28,16 +27,6 @@ type ToolboxProps = {
 
 const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
   const nodeRef = React.useRef(null);
-
-  const [PropName, setPropName] = useState("")
-  const [PropSetName, setPropSetName] = useState<any>()
-
-  const currProp = (text: string, settext: any) => {
-    setPropName(text)
-    setPropSetName(settext)
-    console.log(PropName)
-  }
-
   return (
     <>
       <ToolboxWrapper open={open}>
@@ -53,7 +42,7 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                     addFrameItems(
                       <Draggable grid={[10, 10]} nodeRef={nodeRef}>
                         <div ref={nodeRef}>
-                          <Button getProperties={currProp}/>
+                          <Button  />
                         </div>
                       </Draggable>
                     )
@@ -83,7 +72,7 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                   <PropertyName>
                     Text Content:
                   </PropertyName>
-                  <PropertyTextInput type="text" value={PropName} />
+                  <input type="text" value="none" />
                 </Property>
               </PropsList>
             </ComponentProps>

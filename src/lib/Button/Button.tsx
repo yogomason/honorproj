@@ -2,10 +2,9 @@ import { useState } from "react";
 import { ButtonText, ButtonWrapper } from "./ButtonElements";
 
 type props = {
-  getProperties: any
 }
 
-const Button = ({getProperties}: props) => {
+const Button = ({}: props) => {
 
 const [buttonText, setButtonText] = useState("Button")
 
@@ -15,7 +14,7 @@ const alterText = (val: any) => {
 
   return (
     <>
-      <ButtonWrapper onMouseDown={() => getProperties(buttonText, alterText)}>
+      <ButtonWrapper>
         <ButtonText>{buttonText}</ButtonText>
       </ButtonWrapper>
     </>
