@@ -29,7 +29,9 @@ const Frame = ({ children }: props) => {
         {verticals.map((spacing) => (
           <GridVerticalLine space={spacing} key={spacing} />
         ))}
-        {children}
+        {children?.map((child) => (
+          <div>{child}</div>
+        ))}
       </FrameWrapper>
     </>
   );

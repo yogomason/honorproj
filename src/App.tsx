@@ -14,6 +14,10 @@ function App() {
     setFrameItems([...FrameItems, item]);
   };
 
+  const currProp = (setText: any) => {
+    setText("hello")
+  }
+
   return (
     <div>
       <Frame children={FrameItems} />
@@ -21,6 +25,7 @@ function App() {
         open={Open}
         openFunction={openToolbox}
         addFrameItems={addFrameItem}
+        currProp={currProp}
       />
     </div>
   );

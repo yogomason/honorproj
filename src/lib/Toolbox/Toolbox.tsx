@@ -24,9 +24,10 @@ type ToolboxProps = {
   open: boolean;
   openFunction: any;
   addFrameItems: any;
+  currProp: any;
 };
 
-const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
+const Toolbox = ({ open, openFunction, addFrameItems, currProp }: ToolboxProps) => {
   const nodeRef = React.useRef(null);
   return (
     <>
@@ -43,7 +44,7 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                     addFrameItems(
                       <Draggable grid={[10, 10]} nodeRef={nodeRef}>
                         <div ref={nodeRef}>
-                          <Button text="Button" />
+                          <Button getProperties={currProp}/>
                         </div>
                       </Draggable>
                     )
