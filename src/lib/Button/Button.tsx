@@ -4,21 +4,23 @@ import { ButtonText, ButtonWrapper } from "./ButtonElements";
 type props = {
   text: string;
   Itemkey: number;
-  findItem: any;
-  getSet: any;
+
 };
 
-const Button = ({ text, Itemkey, findItem, getSet }: props) => {
-  const [InnerText, setInnerText] = useState(text);
+const Button = ({ text, Itemkey }: props) => {
+  const [properties, setProperties] = useState({
+    text: text,
+    width: 10
+  });
 
-  const changeText = (text: any) => {
-    setInnerText(text);
-  };
+  const test = () => {
+    setProperties({...properties, text: "hello"})
+  }
 
   return (
     <>
-      <ButtonWrapper onMouseDown={() => getSet(changeText)}>
-        <ButtonText>{InnerText}</ButtonText>
+      <ButtonWrapper onMouseDown={test}>
+        <ButtonText>{properties.text}</ButtonText>
       </ButtonWrapper>
     </>
   );

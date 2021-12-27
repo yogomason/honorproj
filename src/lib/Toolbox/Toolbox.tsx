@@ -23,27 +23,18 @@ type ToolboxProps = {
   open: boolean;
   openFunction: any;
   addFrameItems: any;
-  findItem: any;
 };
 
 const Toolbox = ({
   open,
   openFunction,
   addFrameItems,
-  findItem,
 }: ToolboxProps) => {
   const [Key, setKey] = useState(0);
 
   const getKey = () => {
     setKey(Key + 1);
     return Key;
-  };
-
-  const [setFunc, setSetFunc] = useState();
-
-  const getSetFunction = (setText: any) => {
-    setSetFunc(setText);
-    setFunc("Hello")
   };
 
   return (
@@ -62,8 +53,6 @@ const Toolbox = ({
                       <Button
                         text="Button"
                         Itemkey={getKey()}
-                        findItem={findItem}
-                        getSet={getSetFunction}
                       />
                     )
                   }
