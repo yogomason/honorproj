@@ -20,7 +20,6 @@ for (let i = 0; i < 2000; i += 20) {
   verticals.push(i);
 }
 
-
 const Frame = ({ children }: props) => {
   const nodeRef = React.useRef(null);
   return (
@@ -33,7 +32,9 @@ const Frame = ({ children }: props) => {
           <GridVerticalLine space={spacing} key={spacing} />
         ))}
         {children?.map((child) => (
-          <Draggable nodeRef={nodeRef}><div ref={nodeRef}>{child}</div></Draggable>
+          <Draggable nodeRef={nodeRef}>
+            <div ref={nodeRef}>{child}</div>
+          </Draggable>
         ))}
       </FrameWrapper>
     </>

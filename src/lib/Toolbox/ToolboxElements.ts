@@ -90,7 +90,7 @@ export const ComponentProps = styled.div`
 `;
 
 export const PropsList = styled.div`
-padding:1em;
+  padding: 1em;
   width: 100%;
   height: 100%;
   display: flex;
@@ -98,7 +98,6 @@ padding:1em;
 `;
 
 export const PropertiesContainer = styled.div`
-
   display: flex;
   flex-direction: row;
   overflow-y: scroll;
@@ -111,6 +110,5 @@ export const Property = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
 `;
-
 
 export const PropertyName = styled.p``;

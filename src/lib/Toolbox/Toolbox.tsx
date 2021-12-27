@@ -23,9 +23,29 @@ type ToolboxProps = {
   open: boolean;
   openFunction: any;
   addFrameItems: any;
+  findItem: any;
 };
 
-const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
+const Toolbox = ({
+  open,
+  openFunction,
+  addFrameItems,
+  findItem,
+}: ToolboxProps) => {
+  const [Key, setKey] = useState(0);
+
+  const getKey = () => {
+    setKey(Key + 1);
+    return Key;
+  };
+
+  const [setFunc, setSetFunc] = useState();
+
+  const getSetFunction = (setText: any) => {
+    setSetFunc(setText);
+    setFunc("Hello")
+  };
+
   return (
     <>
       <ToolboxWrapper open={open}>
@@ -39,7 +59,12 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                 <ToolboxComponent
                   onClick={() =>
                     addFrameItems(
-                          <Button  text="Button" />
+                      <Button
+                        text="Button"
+                        Itemkey={getKey()}
+                        findItem={findItem}
+                        getSet={getSetFunction}
+                      />
                     )
                   }
                 >
@@ -64,9 +89,7 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
             <ComponentProps>
               <PropsList>
                 <Property>
-                  <PropertyName>
-                    Text Content:
-                  </PropertyName>
+                  <PropertyName>Text Content:</PropertyName>
                   <input type="text" value="none" />
                 </Property>
               </PropsList>

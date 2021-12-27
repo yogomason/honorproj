@@ -2,19 +2,23 @@ import { useState } from "react";
 import { ButtonText, ButtonWrapper } from "./ButtonElements";
 
 type props = {
-  text: string
-}
+  text: string;
+  Itemkey: number;
+  findItem: any;
+  getSet: any;
+};
 
-const Button = ({text}: props) => {
+const Button = ({ text, Itemkey, findItem, getSet }: props) => {
+  const [InnerText, setInnerText] = useState(text);
 
-const returnSelf = () => {
-  console.log(Button)
-}
+  const changeText = (text: any) => {
+    setInnerText(text);
+  };
 
   return (
     <>
-      <ButtonWrapper onClick={returnSelf}>
-        <ButtonText>{text}</ButtonText>
+      <ButtonWrapper onMouseDown={() => getSet(changeText)}>
+        <ButtonText>{InnerText}</ButtonText>
       </ButtonWrapper>
     </>
   );
