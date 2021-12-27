@@ -1,26 +1,24 @@
 import { useState } from "react";
+import PropertiesBox from "../PropertiesBox/PropertiesBox";
 import { ButtonText, ButtonWrapper } from "./ButtonElements";
 
 type props = {
   text: string;
-  Itemkey: number;
-
 };
 
-const Button = ({ text, Itemkey }: props) => {
+const Button = ({ text }: props) => {
   const [properties, setProperties] = useState({
     text: text,
-    width: 10
+    width: 10,
   });
 
-  const test = () => {
-    setProperties({...properties, text: "hello"})
-  }
+  
 
   return (
     <>
-      <ButtonWrapper onMouseDown={test}>
+      <ButtonWrapper>
         <ButtonText>{properties.text}</ButtonText>
+        <PropertiesBox properties={properties} />
       </ButtonWrapper>
     </>
   );

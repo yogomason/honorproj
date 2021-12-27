@@ -25,17 +25,18 @@ type ToolboxProps = {
   addFrameItems: any;
 };
 
+type ButtonProps = {
+  text: string;
+  width: number;
+}
+
 const Toolbox = ({
   open,
   openFunction,
   addFrameItems,
 }: ToolboxProps) => {
-  const [Key, setKey] = useState(0);
 
-  const getKey = () => {
-    setKey(Key + 1);
-    return Key;
-  };
+
 
   return (
     <>
@@ -52,7 +53,6 @@ const Toolbox = ({
                     addFrameItems(
                       <Button
                         text="Button"
-                        Itemkey={getKey()}
                       />
                     )
                   }
@@ -77,10 +77,6 @@ const Toolbox = ({
           <PropertiesContainer>
             <ComponentProps>
               <PropsList>
-                <Property>
-                  <PropertyName>Text Content:</PropertyName>
-                  <input type="text" value="none" />
-                </Property>
               </PropsList>
             </ComponentProps>
           </PropertiesContainer>

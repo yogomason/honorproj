@@ -32,7 +32,7 @@ const Frame = ({ children }: props) => {
           <GridVerticalLine space={spacing} key={spacing} />
         ))}
         {children?.map((child) => (
-          <Draggable nodeRef={nodeRef}>
+          <Draggable nodeRef={nodeRef} grid={[20, 20]}>
             <div ref={nodeRef}>{child}</div>
           </Draggable>
         ))}
