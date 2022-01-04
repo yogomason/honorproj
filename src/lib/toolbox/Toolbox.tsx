@@ -1,15 +1,6 @@
 import { ToolboxContainer, ToolboxHeader, ToolboxTitle, ToolboxWrapper, ToolboxItem, ToolboxItemList, ToolboxComponent, ToolboxMain, ToolboxArrowContainer, ArrowRight, ArrowLeft } from "./ToolboxElements"
-import Button  from "../Button/Button"
-import Draggable from "react-draggable"
-import React from "react"
-type ToolboxProps = {
-    open: boolean
-    openFunction: any
-    addFrameItems: any
-}
-
+import { ToolboxProps } from "../../types"
 const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
-    const nodeRef = React.useRef(null);
     return (
         <>
             <ToolboxWrapper open={open}>
@@ -21,7 +12,7 @@ const Toolbox = ({ open, openFunction, addFrameItems }: ToolboxProps) => {
                     </ToolboxHeader>
                     <ToolboxContainer>
                         <ToolboxItemList>
-                        <ToolboxItem><ToolboxComponent onClick={() => addFrameItems(<Draggable grid={[10,10]} nodeRef={nodeRef}><div ref={nodeRef}><Button /></div></Draggable>)}>Button</ToolboxComponent></ToolboxItem>
+                        <ToolboxItem><ToolboxComponent onClick={() => addFrameItems("BUTTON")}>Button</ToolboxComponent></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         <ToolboxItem><ToolboxComponent /></ToolboxItem>
                         </ToolboxItemList>
