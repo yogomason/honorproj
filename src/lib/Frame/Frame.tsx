@@ -1,9 +1,9 @@
 import React from "react"
+import Toolbox from "../toolbox/Toolbox"
 import { FrameWrapper, GridHorizontalLine, GridVerticalLine } from "./FrameElements"
+import { FrameProps } from "../../types"
+import Draggable from "react-draggable"
 
-type props = {
-    children?: JSX.Element[]
-}
 
 var horizontals: number[] = []
 for (let i = 0; i < 1800; i+=20) {
@@ -16,14 +16,25 @@ for (let i = 0; i < 2000; i+=20) {
 }
 
 
-const Frame = ({children}: props) => {
+const Frame = ({children, open, openFunction, addFrameItems, deleteFrameItem}: FrameProps) => {
+    const nodeRef = React.useRef(null);
     return (
         <>
             <FrameWrapper>
                 {horizontals.map((spacing) => <GridHorizontalLine space={spacing} key={spacing} />)}
                 {verticals.map((spacing) => <GridVerticalLine space={spacing} key={spacing} />)}
-                {children}
+                {/* use a map function to display children */} 
+                {children.map((child) => {
+                    return (
+                        <Draggable nodeRef={nodeRef} key={child.key} grid={[10,10]}>
+                            <div ref={nodeRef}>
+                            {child.child}
+                            </div>
+                        </Draggable>
+                    )
+                })}
             </FrameWrapper>
+            <Toolbox open={open} openFunction={openFunction} addFrameItems={addFrameItems} deleteFrameItem={deleteFrameItem} />
         </>
     )
 }

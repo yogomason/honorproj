@@ -1,26 +1,33 @@
 import { useState } from "react";
-import Draggable from "react-draggable";
 import Button from "./lib/Button/Button";
 import Frame from "./lib/Frame/Frame";
-import Toolbox from "./lib/toolbox/Toolbox";
+import { FrameItemProps } from "./types";
+
+
 
 function App() {
   const [Open, setOpen] = useState(true)
-  const [FrameItems, setFrameItems] = useState<JSX.Element[]>([])
-
-
+  const [key, setKey] = useState(1)
+  const [FrameItems, setFrameItems] = useState<FrameItemProps[]>([{child: <div></div>, key: 0}])
+  
+    const deleteFrameItem = (key: number) => {
+      setFrameItems(FrameItems.filter((item) => item.key !== key))
+    }
+  
   const openToolbox = () => {
     setOpen(!Open)
   }
 
-  const addFrameItem = (item: JSX.Element) => {
-    setFrameItems([...FrameItems, item])
+  const addFrameItem = (item: string) => {
+    if (item === "BUTTON") {
+    setFrameItems([...FrameItems, {child: <Button keyprop={key} deleteItem={deleteFrameItem}/>, key: key}])
+    setKey(key + 1)
   }
+}
 
   return (
     <div>
-      <Frame children={FrameItems} />
-      <Toolbox open={Open} openFunction={openToolbox} addFrameItems={addFrameItem} />
+      <Frame children={FrameItems} open={Open} openFunction={openToolbox} addFrameItems={addFrameItem} deleteFrameItem={deleteFrameItem} />
     </div>
   );
 }
