@@ -4,11 +4,12 @@
 // the form will the fields name, width, height
 
 import { useState } from "react"
+import { EditProps } from "../../types"
 
-const EditForm = ({element, updateElement}: {element: JSX.Element, updateElement: (element: JSX.Element) => void}) => { 
-    const [name, setName] = useState(element.props.name)
-    const [width, setWidth] = useState(element.props.width)
-    const [height, setHeight] = useState(element.props.height)
+const EditForm = ({element}: EditProps) => { 
+    const [name, setName] = useState(element ? element.child.props.name : "")
+    const [width, setWidth] = useState(element ? element.child.props.width : "")
+    const [height, setHeight] = useState(element ? element.child.props.height : "")
     //state that holds the new props of the element
     const [newProps, setNewProps] = useState({
         name: name,
@@ -18,11 +19,7 @@ const EditForm = ({element, updateElement}: {element: JSX.Element, updateElement
 
     
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        element.props.name = name
-        element.props.width = width
-        element.props.height = height
-        updateElement(element)
+       console.log("hello")
     }
 
     return(

@@ -16,7 +16,7 @@ for (let i = 0; i < 2000; i+=20) {
 }
 
 
-const Frame = ({children, open, openFunction, addFrameItems, deleteFrameItem}: FrameProps) => {
+const Frame = ({children, open, openFunction, addFrameItems}: FrameProps) => {
     const nodeRef = React.useRef(null);
     return (
         <>
@@ -34,7 +34,7 @@ const Frame = ({children, open, openFunction, addFrameItems, deleteFrameItem}: F
                     )
                 })}
             </FrameWrapper>
-            <Toolbox open={open} openFunction={openFunction} addFrameItems={addFrameItems} deleteFrameItem={deleteFrameItem} />
+            <Toolbox open={open} openFunction={openFunction} addFrameItems={addFrameItems}  />
         </>
     )
 }

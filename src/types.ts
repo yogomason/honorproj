@@ -6,6 +6,7 @@ export type FrameItemProps = {
 export type ButtonProps = {
     keyprop: number
     deleteItem: (key: number) => void
+    editItem: (key: number) => void
 }
 
 export type FrameProps = {
@@ -13,12 +14,16 @@ export type FrameProps = {
     open: boolean
     openFunction: () => void
     addFrameItems: (item: string) => void
-    deleteFrameItem: (key: number) => void
+
 }
 
 export type ToolboxProps = {
     open: boolean
     openFunction: () => void
     addFrameItems: (item: string) => void
-    deleteFrameItem: (key: number) => void
+
+}
+
+export type EditProps = {
+    element?: FrameItemProps
 }
